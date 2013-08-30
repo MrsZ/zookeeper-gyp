@@ -1554,7 +1554,7 @@ int zookeeper_interest(zhandle_t *zh, int *fd, int *interest,
     if(zh->next_deadline.tv_sec!=0 || zh->next_deadline.tv_usec!=0){
         int time_left = calculate_interval(&zh->next_deadline, &now);
         int max_exceed = zh->recv_timeout / 10 > 200 ? 200 : (zh->recv_timeout/10);
-        if (time_left > max_exceeded)
+        if (time_left > max_exceed)
             LOG_WARN(("Exceeded deadline by %dms", time_left));
     }
     api_prolog(zh);
