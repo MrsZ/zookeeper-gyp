@@ -169,7 +169,11 @@
 #endif
 #include <Windows.h>
 #include <Winsock2.h>
+#if defined( _MSC_VER ) && ( _MSC_VER < 1600 )
 #include <winstdint.h>
+#else
+#include <stdint.h>
+#endif
 #include <process.h>
 #include <ws2tcpip.h>
 #undef AF_INET6
@@ -190,6 +194,10 @@
 #define EHOSTDOWN EPIPE
 #define ESTALE ENODEV
 
+#if defined( _MSC_VER ) && ( _MSC_VER >= 1600 )
+#undef EWOULDBLOCK
+#undef EINPROGRESS
+#endif
 #define EWOULDBLOCK WSAEWOULDBLOCK
 #define EINPROGRESS WSAEINPROGRESS
 
