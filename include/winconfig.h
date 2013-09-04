@@ -156,11 +156,17 @@
 #define _WIN32_WINNT_NT4 0x0400
 #endif
 
+#ifndef NTDDI_VERSION
 #define NTDDI_VERSION _WIN32_WINNT_NT4
+#endif
+#ifndef _WIN32_WINNT
 #define _WIN32_WINNT _WIN32_WINNT_NT4
+#endif
 
 #define _CRT_SECURE_NO_WARNINGS
+#ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
+#endif
 #include <Windows.h>
 #include <Winsock2.h>
 #include <winstdint.h>
