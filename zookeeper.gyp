@@ -70,6 +70,13 @@
           'sources!': [
             'config.h'
           ],
+          'msvs_settings': {
+            'VCCLCompilerTool': {
+              'WarningLevel': '4',
+              'WarnAsError': 'false',
+              'AdditionalOptions': [ '/WX-' ],
+            }
+          }
         }],
       ],
     },
