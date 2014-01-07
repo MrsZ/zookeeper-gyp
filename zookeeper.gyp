@@ -35,7 +35,6 @@
       ],
       'defines': [
         'THREADED',
-        'USE_STATIC_LIB',
       ],
       'include_dirs': [
         '.',
@@ -50,7 +49,6 @@
         ],
         'defines': [
           'THREADED',
-          'USE_STATIC_LIB',
          ],
       },
       'conditions': [
@@ -76,6 +74,11 @@
               'WarnAsError': 'false',
               'AdditionalOptions': [ '/WX-' ],
             }
+          }
+        }],
+        ['OS=="mac"', {
+          'xcode_settings': {
+            'GCC_C_LANGUAGE_STANDARD': 'gnu99',
           }
         }],
       ],
