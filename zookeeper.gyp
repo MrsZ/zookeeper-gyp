@@ -68,6 +68,14 @@
           'sources!': [
             'config.h'
           ],
+          'defines': [
+            'USE_STATIC_LIB',
+          ],
+          'direct_dependent_settings': {
+            'defines': [
+              'USE_STATIC_LIB',
+            ],
+          },
           'msvs_settings': {
             'VCCLCompilerTool': {
               'WarningLevel': '4',
