@@ -697,6 +697,19 @@ struct sockaddr* zookeeper_get_connected_host(zhandle_t *zh,
     return addr;
 }
 
+struct sockaddr* zookeeper_get_local_host(zhandle_t *zh,
+                 struct sockaddr *addr, socklen_t *addr_len)
+{
+    if (zh->state!=ZOO_CONNECTED_STATE) {
+        return NULL;
+    }
+
+    if (getsockname(zh->fd, addr, addr_len)==-1) {
+        return NULL;
+    }
+    return addr;
+}
+
 static void log_env() {
   char buf[2048];
 #ifdef HAVE_SYS_UTSNAME_H

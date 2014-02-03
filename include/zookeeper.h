@@ -510,6 +510,14 @@ ZOOAPI watcher_fn zoo_set_watcher(zhandle_t *zh,watcher_fn newFn);
 ZOOAPI struct sockaddr* zookeeper_get_connected_host(zhandle_t *zh,
         struct sockaddr *addr, socklen_t *addr_len);
 
+/**
+  * \brief returns the socket address of local machine
+  * \return socket address of the local machine or NULL on failure, only valid if the
+  * connection is current connected
+  */
+ZOOAPI struct sockaddr* zookeeper_get_local_host(zhandle_t *zh,
+         struct sockaddr *addr, socklen_t *addr_len);
+
 #ifndef THREADED
 /**
  * \brief Returns the events that zookeeper is interested in.
