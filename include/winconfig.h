@@ -176,7 +176,6 @@
 #endif
 #include <process.h>
 #include <ws2tcpip.h>
-#undef AF_INET6
 #undef min
 #undef max
 
